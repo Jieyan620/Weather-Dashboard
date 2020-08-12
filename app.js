@@ -1,29 +1,108 @@
-// var city='textInput'
 
-fetch('http://api.weatherapi.com/v1/forecast.json?key=273dbb7c440b4d6ebf061607200602&q=07112&days=7')
-  .then(r => r.json())
-  .then(weather=>{
-    console.log(weather)
-    document.getElementById('currentCard').innerHTML = `
-    <h1>${weather.location.name},${weather.location.region}</h1>
-    <h3>Localtime: ${weather.location.localtime}<h3>
-    <h3>Temperature: ${weather.current.temp_f}ºF<h3>
-    <h3>Humidity: ${weather.current.humidity}<h3>
-    <h3>Wind speed: ${weather.current.wind_mph}MPH<h3>
-    <h3>UV: ${weather.current.uv}<h3>
-    `
-    document.getElementById('fiveCard').innerHTML = `
-    <h2>5-Day Forecast</h2>
+var cityName = ''
 
-    
-    <div>
-    <h3> ${weather.forecast.forecastday[0].date}<h3>
-    <img src="${weather.forecast.forecastday[0].day.condition.icon.url}">
-    <h3>Max Temperature: ${weather.forecast.forecastday[0].day.maxtemp_f}ºF<h3>
-    <h3>Min Temperature: ${weather.forecast.forecastday[0].day.mintemp_f}ºF<h3>
-    <h3>Humidity: ${weather.forecast.forecastday[0].day.avghumidity}<h3>
-    <div>
-    `
-  }
-)
-  .catch(e => console.error(e))
+
+function fetchCurrentWeather(cityName) {
+
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&cnt=5&APPID=0e4bf76db5951d3484682cd293e558ec`)
+    .then(r => r.json())
+    .then(weatherC => {
+      console.log(weatherC)
+
+
+
+
+
+
+    })
+    .catch(e => console.error(e))
+}
+
+function currentWeathercard(params) {
+  
+}
+
+// examlpe ~~~~~~
+// api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&cnt=5&appid=0e4bf76db5951d3484682cd293e558ec
+// https://api.openweathermap.org/data/2.5/weather?q=${cityName}&cnt=5&APPID=0e4bf76db5951d3484682cd293e558ec
+// ~~~~~
+
+function fetchDaysWeather(cityName) {
+
+  fetch(`https://api.weatherbit.io/v2.0/forecast/energy?city=${cityName}&threshold=63&units=I&key=f06f2e60399a4a83930a4bd58ee1e53e&daily=`)
+    .then(r => r.json())
+    .then(weatherD => {
+      console.log(weatherD)
+
+
+
+
+    })
+    .catch(e => console.error(e))
+}
+
+function daysWeathercard(params) {
+  
+}
+
+// examlpe ~~~~~~
+// https://api.weatherbit.io/v2.0/forecast/energy?city=${cityName}&threshold=63&units=I&key=f06f2e60399a4a83930a4bd58ee1e53e&daily=
+// https://api.weatherbit.io/v2.0/forecast/hourly?city=${cityName}&key=f06f2e60399a4a83930a4bd58ee1e53e&daily=
+// ~~~~~
+
+
+
+//Gets citiName from search bar
+function getKeywords() {
+  cityName = document.getElementById('searchInput').value
+  cityName = cityName.replace(/\s+/g, '+')
+  return cityName
+}
+
+
+function eventlistener() {
+  document.addEventListener('click', ({ target }) => {
+    if (target.id === 'searchBtn') {
+
+      event.preventDefault()
+      getKeywords()
+      document.getElementById('searchInput').value=''
+      console.log(cityName)
+
+    } else if (target.id === 'Austin') {
+
+      cityName='Austin'
+
+    } else if (target.id === 'Chicago') {
+
+      cityName='Chicago'
+
+    } else if (target.id === 'Newyork') {
+
+      cityName='New York'
+
+    } else if (target.id === 'Orlando') {
+
+      cityName='Orlando'
+
+    } else if (target.id === 'Sanfrancisco') {
+
+      cityName='San Francisco'
+
+    } else if (target.id === 'Seattle') {
+
+      cityName='Seattle'
+
+    } else if (target.id === 'Denver') {
+
+      cityName='Denver'
+
+    } else if (target.id === 'Atlanta') {
+
+      cityName='Atlanta'
+
+    }
+  })
+}
+
+eventlistener()

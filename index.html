@@ -1,17 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <h2>Search for a city : </h2>
-  <input id="textInput">
-  <div id="currentCard"></div>
-  <div id="fiveCard"></div>
-<script src="app.js"></script>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <h2 class="title">Weather Dashboard</h2>
+  </nav>
+  <section>
+
+    <div class="card">
+      <div class="card-body">
+
+        <div class="row">
+          <div class="col-4">
+            <div>
+              <form class="form-inline">
+                <h6>Search for a city</h6>
+                <div class="search-bar">
+                  <input class="form-control mr-sm-2 sInput" id="searchInput" type="search" placeholder="Search"
+                    aria-label="Search">
+                  <button class="btn btn-outline-primary my-2 my-sm-0" id="searchBtn" type="submit">Search</button>
+                </div>
+              </form>
+            </div>
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link" id="Austin" data-toggle="pill" href="#Austin-output" role="tab"
+                aria-controls="Austin-output" aria-selected="false">Austin</a>
+              <a class="nav-link" id="Chicago" data-toggle="pill" href="#Chicago-output" role="tab"
+                aria-controls="Chicago-output" aria-selected="false">Chicago</a>
+              <a class="nav-link" id="Newyork" data-toggle="pill" href="#Newyork-output" role="tab"
+                aria-controls="Newyork-output" aria-selected="false">New York</a>
+              <a class="nav-link" id="Orlando" data-toggle="pill" href="#Orlando-output" role="tab"
+                aria-controls="Orlando-output" aria-selected="false">Orlando</a>
+              <a class="nav-link" id="Sanfrancisco" data-toggle="pill" href="#SanFrancisco-output" role="tab"
+                aria-controls="SanFrancisco-output" aria-selected="false">San Francisco</a>
+              <a class="nav-link" id="Seattle" data-toggle="pill" href="#Seattle-output" role="tab"
+                aria-controls="Seattle-output" aria-selected="false">Seattle</a>
+              <a class="nav-link" id="Denver" data-toggle="pill" href="#Denver-output" role="tab"
+                aria-controls="Denver-output" aria-selected="false">Denver</a>
+              <a class="nav-link" id="Atlanta" data-toggle="pill" href="#Atlanta-output" role="tab"
+                aria-controls="Atlanta-output" aria-selected="false">Atlanta</a>
+
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade" id="Austin-output" role="tabpanel" aria-labelledby="Austin">Austin</div>
+              <div class="tab-pane fade" id="Chicago-output" role="tabpanel" aria-labelledby="Chicago">Chicago</div>
+              <div class="tab-pane fade" id="Newyork-output" role="tabpanel" aria-labelledby="Newyork">New York</div>
+              <div class="tab-pane fade" id="Orlando-output" role="tabpanel" aria-labelledby="Orlando">Orlando</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <script src="app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
