@@ -1,35 +1,8 @@
 
 var cityName = ''
 
-
-function fetchCurrentWeather(cityName) {
-
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&cnt=5&APPID=0e4bf76db5951d3484682cd293e558ec`)
-    .then(r => r.json())
-    .then(weatherC => {
-      console.log(weatherC)
-
-
-
-
-
-
-    })
-    .catch(e => console.error(e))
-}
-
-function currentWeathercard(params) {
-  
-}
-
-// examlpe ~~~~~~
-// api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&cnt=5&appid=0e4bf76db5951d3484682cd293e558ec
-// https://api.openweathermap.org/data/2.5/weather?q=${cityName}&cnt=5&APPID=0e4bf76db5951d3484682cd293e558ec
-// ~~~~~
-
 function fetchDaysWeather(cityName) {
-
-  fetch(`https://api.weatherbit.io/v2.0/forecast/energy?city=${cityName}&threshold=63&units=I&key=f06f2e60399a4a83930a4bd58ee1e53e&daily=`)
+  fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${cityName}&key=f06f2e60399a4a83930a4bd58ee1e53e&daily=`)
     .then(r => r.json())
     .then(weatherD => {
       console.log(weatherD)
@@ -41,14 +14,11 @@ function fetchDaysWeather(cityName) {
     .catch(e => console.error(e))
 }
 
-function daysWeathercard(params) {
+
+function daysWeathercard() {
   
 }
 
-// examlpe ~~~~~~
-// https://api.weatherbit.io/v2.0/forecast/energy?city=${cityName}&threshold=63&units=I&key=f06f2e60399a4a83930a4bd58ee1e53e&daily=
-// https://api.weatherbit.io/v2.0/forecast/hourly?city=${cityName}&key=f06f2e60399a4a83930a4bd58ee1e53e&daily=
-// ~~~~~
 
 
 
@@ -72,6 +42,7 @@ function eventlistener() {
     } else if (target.id === 'Austin') {
 
       cityName='Austin'
+      fetchDaysWeather(cityName)
 
     } else if (target.id === 'Chicago') {
 
