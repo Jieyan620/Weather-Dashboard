@@ -6,17 +6,22 @@ function fetchDaysWeather(cityName) {
     .then(r => r.json())
     .then(weatherD => {
       console.log(weatherD)
+      var data = weatherD.data
+      console.log(data)
 
-
-
-
+      daysWeathercard(weatherD)
     })
     .catch(e => console.error(e))
 }
 
 
 function daysWeathercard() {
+
+  document.getElementById('v-pills-tabContent').innerHTML = `
   
+  <div> aaaa</div>
+  
+  `
 }
 
 
@@ -36,41 +41,41 @@ function eventlistener() {
 
       event.preventDefault()
       getKeywords()
-      document.getElementById('searchInput').value=''
+      document.getElementById('searchInput').value = ''
       console.log(cityName)
 
     } else if (target.id === 'Austin') {
 
-      cityName='Austin'
+      cityName = 'Austin'
       fetchDaysWeather(cityName)
 
     } else if (target.id === 'Chicago') {
 
-      cityName='Chicago'
+      cityName = 'Chicago'
 
     } else if (target.id === 'Newyork') {
 
-      cityName='New York'
+      cityName = 'New York'
 
     } else if (target.id === 'Orlando') {
 
-      cityName='Orlando'
+      cityName = 'Orlando'
 
     } else if (target.id === 'Sanfrancisco') {
 
-      cityName='San Francisco'
+      cityName = 'San Francisco'
 
     } else if (target.id === 'Seattle') {
 
-      cityName='Seattle'
+      cityName = 'Seattle'
 
     } else if (target.id === 'Denver') {
 
-      cityName='Denver'
+      cityName = 'Denver'
 
     } else if (target.id === 'Atlanta') {
 
-      cityName='Atlanta'
+      cityName = 'Atlanta'
 
     }
   })
