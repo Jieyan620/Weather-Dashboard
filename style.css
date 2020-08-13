@@ -4,10 +4,6 @@ display: grid;
 grid-template-columns: 1fr 3fr;
 }
 
-/* .cityNav{
-  padding-left: 10px;
-} */
-
 .search-bar{
 display: inline;
 }
