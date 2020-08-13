@@ -15,45 +15,42 @@
   <nav class="navbar navbar-dark bg-dark">
     <h2 class="title">Weather Dashboard</h2>
   </nav>
-  <section>
-
-    <div class="card">
-      <div class="card-body">
-
-        <div class="row">
-          <div class="col-4">
-            <div>
-              <form class="form-inline">
-                <h6>Search for a city</h6>
-                <div class="search-bar">
-                  <input class="form-control mr-sm-2 sInput" id="searchInput" type="search" placeholder="Search"
-                    aria-label="Search">
-                  <button class="btn btn-outline-primary my-2 my-sm-0" id="searchBtn" type="submit">Search</button>
-                </div>
-              </form>
+  <section class="card">
+    <div class="card-body">
+      <div class="weathercard">
+        <div class="cityNav"> 
+          <form>
+            <h6>Search for a city</h6>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="searchInput" placeholder="City Name" aria-label="searchInput"
+                aria-describedby="searchBtn">
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="button" id="searchBtn">Button</button>
+              </div>
             </div>
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link" id="Austin" role="tab" aria-selected="false">Austin</a>
-              <a class="nav-link" id="Chicago" role="tab" aria-selected="false">Chicago</a>
-              <a class="nav-link" id="Newyork" role="tab" aria-selected="false">New York</a>
-              <a class="nav-link" id="Orlando" role="tab" aria-selected="false">Orlando</a>
-              <a class="nav-link" id="Sanfrancisco" role="tab" aria-selected="false">San Francisco</a>
-              <a class="nav-link" id="Seattle" role="tab" aria-selected="false">Seattle</a>
-              <a class="nav-link" id="Denver" role="tab" aria-selected="false">Denver</a>
-              <a class="nav-link" id="Atlanta" role="tab" aria-selected="false">Atlanta</a>
+          </form>
 
-            </div>
-          </div>
-          <div class="col-8">
-            <div id="cContent">
-              
-            </div>
-            <div id="fContent">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" id="Austin" role="tab" aria-selected="false">Austin</a>
+            <a class="nav-link" id="Chicago" role="tab" aria-selected="false">Chicago</a>
+            <a class="nav-link" id="Newyork" role="tab" aria-selected="false">New York</a>
+            <a class="nav-link" id="Orlando" role="tab" aria-selected="false">Orlando</a>
+            <a class="nav-link" id="Sanfrancisco" role="tab" aria-selected="false">San Francisco</a>
+            <a class="nav-link" id="Seattle" role="tab" aria-selected="false">Seattle</a>
+            <a class="nav-link" id="Denver" role="tab" aria-selected="false">Denver</a>
+            <a class="nav-link" id="Atlanta" role="tab" aria-selected="false">Atlanta</a>
 
-            </div>
           </div>
         </div>
+        <div class="weather">
+          <div class="cContent" id="cContent">
 
+          </div>
+
+          <div class="fContent" id="fContent">
+
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -6,9 +6,9 @@ function fetchDaysWeather(cityName) {
     .then(r => r.json())
     .then(weatherD => {
       // console.log(weatherD)
-      var data = weatherD.data
+      var Data = weatherD.data
       daysWeathercard(weatherD)
-      get5daysData(data)
+      getFiveDaysData(Data)
     })
     .catch(e => console.error(e))
 }
@@ -49,24 +49,40 @@ function daysWeathercard(weatherD) {
   `
 }
 
-function get5daysData(data) {
-  console.log(data)
-
-
-
-
+function getFiveDaysData(Data) {
+  console.log(Data)
+  var fiveDaysData = []
+for (let i = 1; i < 7; i++) {
+  const element = Data[i]
+  fiveDaysData.push(element)
+}
+// console.log(fiveDaysData)
+document.getElementById('fContent').innerHTML = ''
+fiveDaysData.forEach(day=>{
+console.log(day)
+  dayscard(day)
+})
 
 }
 
-function dayscard() {
+function dayscard(day) {
   let elem = document.createElement('div')
-  eventElem.innerHTML = `
-  
-  
-  
-  
+  elem.innerHTML = `
+   
+   <div class="card-body dayscard">
+      <div class="card-header">
+      <h5 class="card-title">${day.datetime}</h5>
+     </div>
+     <div class="image">
+      <img src="icons/${day.weather.icon}.png">
+     </div>
+     <p class="card-text">
+      Temperature: ${day.max_temp}℃ ~~ ${day.min_temp}℃
+     </p>
+   </div>
+   
   `
-  document.getElementById('fContent').innerHTML = ''
+  
   document.getElementById('fContent').append(elem)
 
 }
