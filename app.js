@@ -5,11 +5,10 @@ function fetchDaysWeather(cityName) {
   fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${cityName}&key=f06f2e60399a4a83930a4bd58ee1e53e&daily=`)
     .then(r => r.json())
     .then(weatherD => {
-      console.log(weatherD)
+      // console.log(weatherD)
       var data = weatherD.data
-      console.log(data)
-
       daysWeathercard(weatherD)
+      get5daysData(data)
     })
     .catch(e => console.error(e))
 }
@@ -50,7 +49,8 @@ function daysWeathercard(weatherD) {
   `
 }
 
-function get5daysData() {
+function get5daysData(data) {
+  console.log(data)
 
 
 
@@ -58,15 +58,18 @@ function get5daysData() {
 
 }
 
-function 5daysWeathercard() {
+function dayscard() {
+  let elem = document.createElement('div')
+  eventElem.innerHTML = `
   
-  document.getElementById('fContent').innerHTML = `
+  
   
   
   `
+  document.getElementById('fContent').innerHTML = ''
+  document.getElementById('fContent').append(elem)
 
 }
-
 
 //Gets citiName from search bar
 function getKeywords() {
