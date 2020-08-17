@@ -1,21 +1,27 @@
 
 .weathercard{
-display: grid;
-grid-template-columns: 1fr 1.5fr 2.5fr;
+display: flex;
+  flex-wrap: wrap;
 }
 
 .search-bar{
 display: inline;
 }
 
+.cityNav{
+flex: 20%;
+}
+
 .cContent{
+  flex:30%;
   padding-left: 15px;
-  padding-right: 15px;
+
 }
 
 .fContent{
+  flex: 50%;
   display: grid;
-grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .sinput{
