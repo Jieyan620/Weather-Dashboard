@@ -1,5 +1,5 @@
 
-var cityName = ''
+var cityName = 'new york'
 
 function fetchDaysWeather(cityName) {
   fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${cityName}&key=f06f2e60399a4a83930a4bd58ee1e53e&daily=`)
@@ -17,7 +17,7 @@ function fetchDaysWeather(cityName) {
 function daysWeathercard(weatherD) {
 
   document.getElementById('cContent').innerHTML = `
-  <div class="card" style="width: 18rem;">
+  <div class="card" >
    <div class="card-header">
     <h3>Today</h3>
    </div>
@@ -141,5 +141,5 @@ function eventlistener() {
     }
   })
 }
-
+fetchDaysWeather(cityName)
 eventlistener()
